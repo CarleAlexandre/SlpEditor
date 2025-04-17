@@ -1,0 +1,7 @@
+*.o
+obj
+old
+raylibex
+.vscode
+build
+*.exe
