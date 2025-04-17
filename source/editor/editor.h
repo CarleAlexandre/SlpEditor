@@ -21,19 +21,26 @@ typedef struct {
 	int	count;
 	Vector2	cursor_pos;
 	bool	synced;
-	int*	original;
-	int*	edit;
 }	text;
 
+typedef enum {
+	op_del,
+	op_add,
+} operation_enum;
+
 typedef struct {
-	int	buffer;
-	int	index;
-	int	length;
+	operation_enum	op;
+	unsigned int	index;
+	unsigned int	length;
 }	operation;
 
 
 //should be a list of operation or an arena buffer
-typedef operation* table;
+typedef struct {
+	operation*	table;
+	int*		original;
+	int*		edit;
+}	piece_table;
 
 #endif
 
