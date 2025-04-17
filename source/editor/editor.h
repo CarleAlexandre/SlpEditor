@@ -31,6 +31,8 @@ typedef struct {
 	int	length;
 }	operation;
 
+
+//should be a list of operation or an arena buffer
 typedef operation* table;
 
 #endif
